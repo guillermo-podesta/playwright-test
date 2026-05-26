@@ -11,7 +11,8 @@
   },
   "scripts": {
     "bddgen": "bddgen test",
-    "test": "bddgen test && playwright test",
-    "test:e2e": "bddgen test && playwright test --grep @e2e"
+    "test:regression": "bddgen test && playwright test --grep @regression",
+    "test:smoke": "bddgen test && playwright test --grep @smoke",
+    "test:api": "bddgen test && playwright test --grep @api"
   }
 }
