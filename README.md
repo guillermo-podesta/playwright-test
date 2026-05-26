@@ -99,3 +99,29 @@ Static payloads and seed data are kept separate from step logic. This makes it e
 
 ### CI — `.github/workflows/playwright.yml`
 Tests run on GitHub Actions via manual trigger (`workflow_dispatch`). An optional tag input lets you scope the run to a specific suite (e.g. `@regression`, `@smoke`).
+
+---
+
+## Manual QA Bug Report
+
+> **Simulated Jira Ticket**
+
+| Field | Details |
+|-------|---------|
+| **Title** | Inventory Page \| Filter Products is not working |
+| **Severity** | High |
+
+### Description
+Once the user is logged in with the username `problem_user` and password `secret_sauce`, they are redirected to the Inventory page. When trying to apply any available filter option from the dropdown, none of them perform any action.
+
+### Steps to Reproduce
+1. Navigate to the login page
+2. Log in using credentials: username `problem_user`, password `secret_sauce`
+3. Click the Filter dropdown menu on the Inventory page
+4. Choose any available option
+
+### Expected Result
+The product list should reorder or filter according to the selected option.
+
+### Actual Result
+Despite selecting any option from the dropdown, nothing happens on the page. No filter is applied and the product list remains unchanged.
