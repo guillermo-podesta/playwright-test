@@ -12,7 +12,19 @@ type PageFixtures = {
   checkoutPage: CheckoutPage;
 };
 
-export const test = base.extend<PageFixtures>({
+export type BookingState = {
+  token: string;
+  bookingId: number;
+  bookingData: Record<string, unknown>;
+  lastResponse: Record<string, unknown>;
+  lastStatus: number;
+};
+
+type ApiFixtures = {
+  bookingState: BookingState;
+};
+
+export const test = base.extend<PageFixtures & ApiFixtures>({
   loginPage: async ({ page }, use) => {
     await use(new LoginPage(page));
   },
@@ -24,6 +36,9 @@ export const test = base.extend<PageFixtures>({
   },
   checkoutPage: async ({ page }, use) => {
     await use(new CheckoutPage(page));
+  },
+  bookingState: async ({}, use) => {
+    await use({} as BookingState);
   },
 });
 
