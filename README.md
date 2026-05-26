@@ -6,8 +6,6 @@ A test automation framework built with Playwright and BDD (Behavior Driven Devel
 
 ## Prerequisites
 
-- [Node.js](https://nodejs.org/) v18 or higher
-- [npm](https://www.npmjs.com/) v9 or higher
 - A `.env` file at the project root with the following variables:
 
 ```env
@@ -22,7 +20,6 @@ SAUCE_PASSWORD=your_password
 ```bash
 # Clone the repository
 git clone git@github.com:guillermo-podesta/playwright-test.git
-cd playwright-test
 
 # Install dependencies
 npm install
@@ -112,7 +109,7 @@ Tests run on GitHub Actions via manual trigger (`workflow_dispatch`). An optiona
 | **Severity** | High |
 
 ### Description
-Once the user is logged in with the username `problem_user` and password `secret_sauce`, they are redirected to the Inventory page. When trying to apply any available filter option from the dropdown, none of them perform any action.
+Once the user is logged in, he/she is redirected to the Inventory page. When trying to apply any available filter option from the dropdown, none of them perform any action.
 
 ### Steps to Reproduce
 1. Navigate to the login page
