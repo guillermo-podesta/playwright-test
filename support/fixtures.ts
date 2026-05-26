@@ -4,6 +4,7 @@ import { LoginPage } from '../pages/loginPage';
 import { InventoryPage } from '../pages/inventoryPage';
 import { CartPage } from '../pages/cartPage';
 import { CheckoutPage } from '../pages/checkoutPage';
+import { Booking } from '../utils/bookingApi';
 
 type PageFixtures = {
   loginPage: LoginPage;
@@ -15,9 +16,10 @@ type PageFixtures = {
 export type BookingState = {
   token: string;
   bookingId: number;
-  bookingData: Record<string, unknown>;
-  lastResponse: Record<string, unknown>;
+  bookingData: Booking;
+  lastResponse: Booking;
   lastStatus: number;
+  lastCheckout: string;
 };
 
 type ApiFixtures = {
