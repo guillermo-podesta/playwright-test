@@ -4,6 +4,12 @@ on:
     branches: [ main, master ]
   pull_request:
     branches: [ main, master ]
+  workflow_dispatch:
+    inputs:
+      tags:
+        description: 'Test tag to run (e.g. @regression, @smoke). Leave empty to run all tests.'
+        required: false
+        default: ''
 jobs:
   test:
     timeout-minutes: 60
@@ -18,7 +24,12 @@ jobs:
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
     - name: Run Playwright tests
-      run: npm test
+      run: |
+        if [ -n "${{ github.event.inputs.tags }}" ]; then
+          npx playwright test --grep "${{ github.event.inputs.tags }}"
+        else
+          npm test
+        fi
       env:
         SAUCE_USERNAME: ${{ secrets.SAUCE_USERNAME }}
         SAUCE_PASSWORD: ${{ secrets.SAUCE_PASSWORD }}
