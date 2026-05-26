@@ -1,5 +1,6 @@
 import { defineConfig, devices } from '@playwright/test';
 import { defineBddConfig } from 'playwright-bdd';
+import os from 'os';
 
 const testDir = defineBddConfig({
   features: 'features/**/*.feature',
@@ -16,6 +17,7 @@ export default defineConfig({
   timeout: 30000,
   retries: 1,
   fullyParallel: true,
+  workers: os.cpus().length,
 
   use: {
     baseURL: 'https://www.saucedemo.com',
