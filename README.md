@@ -32,19 +32,19 @@ npx playwright install --with-deps
 
 ## Execution Commands
 
-### Run all tests
+### Run regression suite (all tagged tests)
 ```bash
-npm test
+npm run test:regression
 ```
 
-### Run UI tests only
+### Run smoke suite
 ```bash
-npx bddgen test && npx playwright test --grep @regression
+npm run test:smoke
 ```
 
 ### Run API tests only
 ```bash
-npx bddgen test && npx playwright test --grep @api
+npm run test:api
 ```
 
 ### Run in headed mode (visible browser)
@@ -55,11 +55,6 @@ npx bddgen test && npx playwright test --headed
 ### Run in headless mode (default)
 ```bash
 npx bddgen test && npx playwright test --headless
-```
-
-### Run a specific tag
-```bash
-npx bddgen test && npx playwright test --grep @smoke
 ```
 
 ---
