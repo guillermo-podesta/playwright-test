@@ -4,6 +4,19 @@ A test automation framework built with Playwright and BDD (Behavior Driven Devel
 
 ---
 
+## Tech Stack
+
+| Library | Purpose |
+|---------|---------|
+| `@playwright/test` | Test runner and browser automation |
+| `playwright-bdd` | BDD layer connecting Gherkin feature files to Playwright |
+| `@cucumber/cucumber` | Gherkin syntax parser |
+| `typescript` | Typed language for all test code |
+| `zod` | Environment variable validation |
+| `dotenv` | Loads variables from the `.env` file at runtime |
+
+---
+
 ## Prerequisites
 
 - A `.env` file at the project root with the following variables:
